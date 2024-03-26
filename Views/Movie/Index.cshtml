@@ -1,0 +1,25 @@
+﻿@model List<TestWebAppDemo.Models.Movie>
+
+@{
+    ViewData["Title"] = "Movies";
+}
+
+<h1 style="color:white;">Current Movies on shelf</h1>
+
+
+@foreach(var movie in Model)
+{
+    <div class="card" style="width: 18rem;">
+        <img src="@movie.ImagePath" class="card-img-top" alt="Movie poster of @movie.Title" title="Movie poster for @movie.Title">
+        <div class="card-body" id="CardBody">
+            <h4 class="card-title">@movie.Title</h4>
+            <h6>Description:</h6>
+            <p class="card-text">@movie.Description</p>
+            <h6>Year:</h6>
+            <p class="card-text">@movie.Year</p>
+            <div id="CardButton">
+                <a id="ReviewButton" href="@movie.ReviewLink" class="btn btn-dark" style="position:">Reviews</a>
+            </div>
+        </div>
+    </div>
+}
